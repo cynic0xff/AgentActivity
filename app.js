@@ -21,13 +21,15 @@ csv({
 })
 .fromFile(csvFilePath)
 .on('header', (header)=> {
-    destArr += 'email' + ',';
-    destArr += 'firstName' + ',';
-    destArr += 'middlename' + ',';
-    destArr += 'lastname' + ',';
-    destArr += 'city' + ',';
-    destArr += 'company';
-    destArr += '\n';
+    if(appendToFile != '-A') {
+        destArr += 'email' + ',';
+        destArr += 'firstName' + ',';
+        destArr += 'middlename' + ',';
+        destArr += 'lastname' + ',';
+        destArr += 'city' + ',';
+        destArr += 'company';
+        destArr += '\n';
+    }
 })
 .on('csv', (csvRow, rowIndex)=> {
     let email = `${csvRow[sourceHeader.cbmoveEmail]}@cbmove.com`;
