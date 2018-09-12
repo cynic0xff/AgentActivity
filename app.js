@@ -32,7 +32,7 @@ csv({
     }
 })
 .on('csv', (csvRow, rowIndex)=> {
-    let email = `${csvRow[sourceHeader.cbmoveEmail]}@cbmove.com`;
+    let email = `${csvRow[sourceHeader.cbmoveEmail]}@domain.com`;
     let name = createName(splitName(csvRow[sourceHeader.agentName]));
     
     destArr += email + ',';
